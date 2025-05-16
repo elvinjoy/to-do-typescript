@@ -1,12 +1,18 @@
+/* globals.css */
+
 :root {
-  --background: #f5f7fa;
-  --foreground: #2c3e50;
-  --primary: #4a90e2;
-  --primary-hover: #357abd;
-  --error: #e74c3c;
-  --border-radius: 8px;
-  --shadow-light: rgba(0, 0, 0, 0.1);
+  --background: linear-gradient(135deg, #dfe9f3 0%, #ffffff 100%);
+  --foreground: #2e2e2e;
+  --primary: #6c5ce7;
+  --primary-hover: #4b42a9;
+  --error: #ff6b6b;
+  --glass: rgba(255, 255, 255, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --backdrop-blur: blur(12px);
+  --border-radius: 20px;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {

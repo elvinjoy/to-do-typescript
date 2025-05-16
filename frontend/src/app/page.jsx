@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import TodoItem from './Components/TodoItem';
 import styles from './page.module.css';
 
 const API_URL = 'http://localhost:5000/api/todos';
@@ -33,7 +32,7 @@ export default function Home() {
 
   const toggleTodo = async (id, completed) => {
     try {
-      await axios.put(`${API_URL}/${id}`, { completed });
+      await axios.put(`${API_URL}/${id}`, { completed: !completed });
       fetchTodos();
     } catch (err) {
       console.error('Toggle failed:', err);
@@ -55,7 +54,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <h1>📝 To-Do App</h1>
+      <h1 className={styles.heading}>📝 To-Do App</h1>
       <div className={styles.inputArea}>
         <input
           type="text"
@@ -65,9 +64,30 @@ export default function Home() {
         />
         <button onClick={addTodo}>Add</button>
       </div>
+
       <div>
         {todos.map((todo) => (
-          <TodoItem key={todo._id} todo={todo} onToggle={toggleTodo} onDelete={deleteTodo} />
+          <div key={todo._id} className={styles.todoBox}>
+            <span
+              className={todo.completed ? styles.completedText : ''}
+            >
+              {todo.title}
+            </span>
+            <div className={styles.todoActions}>
+              <button
+                className={styles.completeButton}
+                onClick={() => toggleTodo(todo._id, todo.completed)}
+              >
+                {todo.completed ? 'Undo' : 'Completed'}
+              </button>
+              <button
+                className={styles.deleteButton}
+                onClick={() => deleteTodo(todo._id)}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         ))}
       </div>
     </main>

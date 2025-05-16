@@ -1,31 +1,92 @@
 .main {
   max-width: 600px;
-  margin: 50px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  font-family: sans-serif;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .inputArea {
   display: flex;
-  margin-bottom: 20px;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .inputArea input {
-  padding: 10px;
   flex: 1;
-  margin-right: 10px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 .inputArea button {
-  padding: 10px 15px;
+  width: 130px;
+  padding: 0.75rem;
+  font-size: 1rem;
   border: none;
+  border-radius: 8px;
   background-color: #0070f3;
   color: white;
-  border-radius: 4px;
   cursor: pointer;
+}
+
+.inputArea button:hover {
+  background-color: #005cc5;
+}
+
+.todoBox {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completedText {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todoActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.completeButton,
+.deleteButton {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.completeButton {
+  background-color: #28a745;
+  color: white;
+}
+
+.completeButton:hover {
+  background-color: #218838;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
 }
