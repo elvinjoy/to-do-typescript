@@ -14,7 +14,7 @@ export default function TodoItem({ todo, onToggle, onDelete }) {
         {todo.title}
       </span>
       <button
-        style={{ background: 'red', color: 'white', border: 'none', padding: '0 8px' }}
+        style={{ cursor: 'pointer', background: 'red', color: 'white', border: 'none', padding: '0 8px' }}
         onClick={() => onDelete(todo._id)}
       >
         X
